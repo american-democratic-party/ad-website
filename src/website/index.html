@@ -1,0 +1,56 @@
+{% assign githubHome = 'https://github.com/american-democratic-party/american-democratic-party' %}
+{% assign motto =      'Liberal Principles from Common Sense' %}
+{% render 'src/templates/doc-begin.html', articleTitle: motto %}
+
+<main>
+
+   <section>
+      <h2>{{motto}}</h2>
+      <div>
+         TBD.&nbsp;
+      </div>
+   </section>
+
+   <section>
+      <h2>Read the Platform</h2>
+      <div>
+         <i data-icon=book data-href={{webRoot}}/platform style="font-size: 6rem;"></i>
+      </div>
+   </section>
+
+   <section id=checklist data-on-load=app.checklist.restore>
+      <h2>Your Activity Checklist</h2>
+      {% render 'src/templates/activity-checklist.html' %}
+   </section>
+
+   <section id=articles>
+      <figure class=small-picture>
+         <img src={{webRoot}}/assets/adp-circle-logo.svg alt=logo>
+      </figure>
+      <h2>Articles</h2>
+      <div>
+         <menu>
+            {% render 'src/templates/generated/articles.html' %}
+         </menu>
+      </div>
+   </section>
+
+   <section id=about>
+      <figure class=small-picture>
+         <a href=https://creativecommons.org/public-domain/cc0 class=external-site>
+            <img src={{webRoot}}/assets/cc0-license.png alt=cc0>
+         </a>
+      </figure>
+      <h2>About the Project</h2>
+      <p>
+         The <b>American Democratic Party</b> website is an
+         <a href={{githubHome}}>Open Source project</a>,
+         and the content we create is published under the CC0 license.&nbsp;
+         CC0 is the permissive Creative Commons License for public domain work with
+         "No&nbsp;Rights&nbsp;Reserved".&nbsp;
+      </p>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

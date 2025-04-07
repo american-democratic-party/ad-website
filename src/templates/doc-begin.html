@@ -1,0 +1,56 @@
+{% assign defaultImageUrl = webRoot | append: '/assets/adp-bison-logo-card.png' %}
+{% assign imageUrl =        heroImage | default: defaultImageUrl %}
+{% assign imageCaption =    heroCaption | default: 'Logo' %}
+{% assign motto =           'Liberal Principles from Common Sense' %}
+<!doctype html>
+<!-- - - - - - - - - - - - - - - - - - - - -->
+<!-- American Democratic Party, {{ "now" | date: "%Y-%m-%d" }} -->
+<!-- - - - - - - - - - - - - - - - - - - - -->
+<html lang=en>
+<head>
+   <meta charset=utf-8>
+   <meta name=viewport                   content="width=device-width, initial-scale=1">
+   <meta name=robots                     content="index, follow">
+   <meta name=description                content="American Democratic Party 🇺🇸 {{articleTitle}} 🇺🇸 {{motto}}">
+   <meta name=apple-mobile-web-app-title content="American Democratic Party">
+   <meta name=twitter:card               content="summary_large_image">
+   <meta name=twitter:title              content="{{articleTitle}}">
+   <meta name=twitter:description        content="American Democratic Party 🇺🇸 {{motto}}">
+   <meta name=twitter:image              content="{{imageUrl}}">
+   <meta name=twitter:image:alt          content="{{imageCaption}}">
+   <meta property=og:title               content="{{articleTitle}}">
+   <meta property=og:description         content="American Democratic Party 🇺🇸 {{motto}}">
+   <meta property=og:type                content="website">
+   <meta property=og:image               content="{{imageUrl}}">
+   <meta property=og:image:alt           content="{{imageCaption}}">
+   <title>{{articleTitle}} 🇺🇸 American Democratic Party</title>
+   <link rel=icon             href={{webRoot}}/assets/bookmark.png>
+   <link rel=apple-touch-icon href={{webRoot}}/assets/adp-bison-logo.svg>
+   <link rel=preconnect       href=https://fonts.googleapis.com>
+   <link rel=preconnect       href=https://fonts.gstatic.com crossorigin>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{package.dependencies.-fortawesome-fontawesome-free|version}}/css/all.min.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/dna-engine@{{package.dependencies.dna-engine|version}}/dist/dna-engine.min.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/reset.min.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/layouts/zebra-sections.css>
+   <link rel=stylesheet       href={{webRoot}}/style.css>
+   <script defer src=https://cdn.jsdelivr.net/npm/dna-engine@{{package.dependencies.dna-engine|version}}/dist/dna-engine.min.js></script>
+   <script defer src=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/lib-x.min.js></script>
+   <script defer src={{webRoot}}/app.js></script>
+</head>
+<body>
+
+<header class=responsive-avatar>
+   <nav id=link-menu>
+      <a href={{webRoot}}>Home</a>
+      <a href={{webRoot}}/platform>Platform</a>
+      <a href={{webRoot}}/media>Media</a>
+   </nav>
+   <h1>American Democratic Party</h1>
+   <h2>🇺🇸&nbsp;{{motto}}&nbsp;🇺🇸</h2>
+   <img src={{webRoot}}/assets/adp-bison-logo.svg alt=logo>
+   <div id=article-nav>
+      <i data-icon=circle-left></i>
+      <i data-icon=circle-right></i>
+      <ul>{% render 'src/templates/generated/articles.html' %}</ul>
+   </div>
+</header>

@@ -1,0 +1,27 @@
+{% assign articleTitle = 'Platform' %}
+{% assign heroImage =    webRoot | append: '/assets/us-flag-tim-mossholder-QsX23A3NgMQ-unsplash.jpg' %}
+{% assign heroCaption =  'Platform' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <div>
+         TBD.&nbsp;
+      </div>
+      <figure>
+         <img src={{heroImage}} alt=flag data-author=tim-mossholder data-license=unsplash>
+      </figure>
+   </section>
+
+   <section>
+      <h2>Section Header</h2>
+      <div>
+         TBD.&nbsp;
+      </div>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

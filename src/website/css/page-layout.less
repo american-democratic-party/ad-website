@@ -1,0 +1,56 @@
+// American Democratic Party
+// Style: Layout
+
+@import "static/utility-box";
+
+body {
+   >header {
+      height: 240px;
+      >h2 {
+         display: none;
+         }
+      >img {
+         background-color: black;
+         border: 2px solid white;
+         border-radius: 0px;
+         padding: 10px 15px;
+         }
+      #article-nav {
+         // div#article-nav
+         //    i[data-icon=circle-left,  data-on-click=app.goToArticle, data-nav=prev]
+         //    i[data-icon=circle-right, data-on-click=app.goToArticle, data-nav=next]
+         //    ul
+         //       li a[href]
+         position: absolute;
+         left: 0px;
+         right: 0px;
+         bottom: -65px;
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         max-width: 1000px;
+         padding: 0px 10px;
+         margin: 0px auto;
+         visibility: hidden;
+         &.show {
+            visibility: visible;
+            }
+         >i {
+            font-size: 3em;
+            cursor: pointer;
+            &.hide {
+               visibility: hidden;
+               }
+            }
+         >ul {
+            display: none;
+            }
+         }
+      }
+   main {
+      >section {
+         }
+      }
+   >footer {
+      }
+   }

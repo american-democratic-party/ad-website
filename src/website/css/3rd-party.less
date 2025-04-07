@@ -1,0 +1,25 @@
+// 3rd Party Customizations
+
+@import "static/utility-box";
+
+/* Zebra Sections layout -- customize header */
+body >header {
+   // background-image: url(assets/backgrounds/brian-miller-b4N0GAEn-RQ-unsplash.jpg);
+   // background-image: url(assets/backgrounds/richard-lee-9ME5tBjVyMQ-unsplash.jpg);
+   background-image: url(assets/backgrounds/jason-rojas-MzUyiPl4blE-unsplash.jpg);
+   // background-image: url(assets/backgrounds/wlodzimierz-jaworski-jullz6sf1uY-unsplash.jpg);
+   }
+body >header nav#link-menu a,
+body >header nav#link-menu a.current,
+body >header nav#link-menu a:hover {
+   color: white;
+   }
+body >header nav#link-menu a.current,
+body >header nav#link-menu a:hover {
+   border-color: gold;
+   }
+
+// Marble Checklist
+ol.marble-checklist >li:nth-child(odd)::before  { background-color: @colorAdpBlue; }  //marbles
+ol.marble-checklist >li:nth-child(even)::before { background-color: @colorAdpRed; }   //marbles
+ol.marble-checklist >li label b::after { background-color: @colorAdpSkyBlue; border-color: @colorAdpSkyBlue; }  //checkboxes

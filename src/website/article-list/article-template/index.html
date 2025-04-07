@@ -1,0 +1,33 @@
+{% assign articleTitle = 'This is an Article' %}
+{% assign heroImage =    'hero-image-1200x630.png' %}
+{% assign heroCaption =  'This is the hero image caption' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <sup>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></sup>
+      <p>
+         Text goes here...&nbsp;
+      </p>
+      <figure>
+         <img src={{heroImage}} alt=hero data-author=unknown data-license=cc0>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         More text goes here...&nbsp;
+      </p>
+   </section>
+
+   <section id=conclusion>
+      <h2>Conclusion</h2>
+      <p>
+         Summary goes here...&nbsp;
+      </p>
+      <figure>⭐ 🦬 ⭐</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

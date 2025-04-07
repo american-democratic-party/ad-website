@@ -30,8 +30,36 @@
          "dna": false
       }
    },
+   "runScriptsConfig": {
+      "clean": [
+         "rimraf build docs"
+      ],
+      "generated": [
+         "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
+      ],
+      "lint": [
+         "jshint src"
+      ],
+      "build": [
+         "copy-folder src/website                   build --ext=.png,.jpg,.svg,.js",
+         "lessc       src/website/style.less        build/style.css",
+         "replacer    src/website   --ext=.html     build",
+         "copy-file   build/article-list/index.html build/article --folder"
+      ],
+      "publish": [
+         "rev-web-assets build                      docs --meta-content-base=https://american-democratic-party.org",
+         "copy-file src/cname.txt                   docs/CNAME",
+         "copy-file src/website/assets/bookmark.png docs/graphics --folder"
+      ],
+      "interactive": [
+         "chokidar src --command 'run-scripts lint build publish'",
+         "browser-sync . --startPath docs --files docs"
+      ]
+   },
    "scripts": {
-      "test": "echo TBD"
+      "pretest": "run-scripts clean lint generated build publish",
+      "test": "html-validator docs '--ignore=Section lacks heading.'",
+      "interactive": "npm run pretest && run-scripts interactive --parallel"
    },
    "dependencies": {
       "@fortawesome/fontawesome-free": "~6.7",

@@ -1,0 +1,19 @@
+// American Democratic Party
+// Style: Figures
+
+@import "static/utility-box";
+
+figure {
+   &.small-picture {
+      img {
+         width: 200px;
+         .MobileMode({ width: 150px; });
+         }
+      }
+   &.medium-picture {
+      img {
+         width: 400px;
+         .MobileMode({ width: 350px; });
+         }
+      }
+   }
