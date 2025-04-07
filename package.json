@@ -15,7 +15,9 @@
    "keywords": [
       "american",
       "democratic",
-      "party"
+      "party",
+      "political",
+      "political-party"
    ],
    "jshintConfig": {
       "esversion": 11,
