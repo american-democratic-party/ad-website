@@ -39,3 +39,30 @@ main section.logo-card-viewer {
          }
       }
    }
+
+main section.party-colors {
+   >figure {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: end;
+      >cite {
+         font-size: 5em;
+         transform: scaleX(-1);
+         }
+      >header {
+         font-size: 1.4rem;
+         }
+      >b {
+         font-size: 2em;
+         color: white;
+         background-color: @colorAdpBlue;
+         padding: 40px 0px;
+         &+b {
+            background-color: @colorAdpRed;
+            }
+         &+b+b {
+            background-color: @colorAdpGray;
+            }
+         }
+      }
+   }
