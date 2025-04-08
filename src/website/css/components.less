@@ -17,8 +17,9 @@ main section.logo-card-viewer {
       align-items: center;
       width: 600px;   //half of 1200px
       height: 315px;  //half of 630px
+      max-width: 100%;  //prevent overflow on mobile
       background-color: white;
-      border: 3px solid white;
+      border: 5px solid white;  //extra space for a clean crop
       padding: 0px;
       >img {
          width: 50%;
@@ -50,7 +51,7 @@ main section.party-colors {
          transform: scaleX(-1);
          }
       >header {
-         font-size: 1.4rem;
+         font-size: 1.3rem;
          }
       >b {
          font-size: 2em;
