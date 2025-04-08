@@ -3,5 +3,39 @@
 
 @import "static/utility-box";
 
-section {
+main section.image-viewer {
+   img {
+      .CheckerboardBackground();
+      }
+   }
+
+main section.logo-card-viewer {
+   color: white;
+   background-color: dimgray;
+   >figure:first-of-type {
+      display: flex;
+      align-items: center;
+      width: 600px;   //half of 1200px
+      height: 315px;  //half of 630px
+      background-color: white;
+      border: 3px solid white;
+      padding: 0px;
+      >img {
+         width: 50%;
+         transform: scale(0.9) translate(0px, 0px);  //adjust size and location
+         }
+      >p {
+         width: 50%;
+         font-family: Chango;
+         font-size: 1.9rem;
+         line-height: 1.8em;
+         text-align: left;
+         color: @colorAdpGray;
+         }
+      }
+   >figure:last-of-type {
+      img {
+         .CheckerboardBackground();
+         }
+      }
    }

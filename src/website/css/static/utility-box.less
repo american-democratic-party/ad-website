@@ -4,8 +4,9 @@
 // Custom Colors
 @colorAdpBlue:    navy;
 @colorAdpRed:     firebrick;
-@colorAdpGray:    gray;
+@colorAdpGray:    dimgray;
 @colorAdpSkyBlue: dodgerblue;
+@colorSmoke:      #444444;
 @colorGraphite:   #303030;
 @colorCharcoal:   #222222;
 @colorTar:        #161616;
@@ -39,6 +40,20 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   }
+
+.CheckerboardBackground() {
+   background: conic-gradient(
+      lightgray 90deg,
+      darkgray 90deg 180deg,
+      lightgray 180deg 270deg,
+      darkgray 270deg
+      );
+   background-size: 15px 15px;
+   border: 3px solid black;
+   &:hover {
+      background: black;
+      }
    }
 
 .DarkMode(@lessRules) {  //apply style if user has requested dark color themes
