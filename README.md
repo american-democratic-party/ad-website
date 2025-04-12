@@ -1,4 +1,4 @@
-<img src=src/website/assets/adp-bison-logo.svg width=100 alt=logo>
+<img src=src/website/assets/logos/adp-bison-logo.svg width=100 alt=logo>
 
 # American Democratic Party
 ### 🇺🇸 Liberal Principles from Common Sense 🇺🇸

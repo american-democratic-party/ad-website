@@ -3,13 +3,18 @@
 
 @import "static/utility-box";
 
-main section.image-viewer {
+
+main >section[data-background=american-flag] {
+   background-image: url(assets/backgrounds/american-flag-by-tim-mossholder-QsX23A3NgMQ-unsplash-blur.jpg);
+   }
+
+main >section.image-viewer {
    img {
       .CheckerboardBackground();
       }
    }
 
-main section.logo-card-viewer {
+main >section.logo-card-viewer {
    color: white;
    background-color: dimgray;
    >figure:first-of-type {
@@ -41,7 +46,7 @@ main section.logo-card-viewer {
       }
    }
 
-main section.party-colors {
+main >section.party-colors {
    >figure {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;

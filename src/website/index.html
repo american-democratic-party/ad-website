@@ -7,11 +7,14 @@
    <section>
       <h2>{{motto}}</h2>
       <div>
-         TBD.&nbsp;
+         <header>We believe:</header>
+         <ol>
+            {% render 'src/templates/reasons-why.html' %}
+         </ol>
       </div>
    </section>
 
-   <section>
+   <section data-background=american-flag>
       <h2>Read the Platform</h2>
       <div>
          <i data-icon=book data-href={{webRoot}}/platform style="font-size: 6rem;"></i>
@@ -25,7 +28,7 @@
 
    <section id=articles>
       <figure class=small-picture>
-         <img src={{webRoot}}/assets/adp-circle-logo.svg alt=logo>
+         <img src={{webRoot}}/assets/logos/adp-circle-logo.svg alt=logo>
       </figure>
       <h2>Articles</h2>
       <div>
