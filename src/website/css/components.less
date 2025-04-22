@@ -73,3 +73,17 @@ main >section.party-colors {
          }
       }
    }
+
+ul.platform-toc {
+   list-style-type: none;
+   li {
+      font-size: 0.9rem;
+      font-weight: normal;
+      margin-bottom: 3px;
+      &[data-depth="1"] { font-size: 1.1rem; font-weight: bold; margin-top: 10px; }
+      &[data-depth="2"] { font-size: 1.0rem; margin-left: 40px; }
+      &[data-depth="3"] { margin-left: 60px; }
+      &[data-depth="4"] { margin-left: 80px; }
+      &[data-depth="5"] { margin-left: 100px; }
+      }
+   }

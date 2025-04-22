@@ -9,11 +9,9 @@
       <h2>{{articleTitle}}</h2>
       <div>
          <header>Table of Contents</header>
-         <ol>
-            <li>Section #1</li>
-            <li>Section #2</li>
-            <li>Section #3</li>
-         </ol>
+         <ul class=platform-toc>
+            {% render 'src/templates/generated/platform-toc.html' %}
+         </ul>
       </div>
    </section>
 
@@ -23,7 +21,7 @@
       </figure>
       <h2>{{heroCaption}}</h2>
       <div>
-         {% render 'src/templates/generated/platform.html' %}
+         {% render 'src/templates/generated/platform-details.html' %}
       </div>
    </section>
 
