@@ -23,3 +23,8 @@ body >header nav#link-menu a:hover {
 ol.marble-checklist >li:nth-child(odd)::before  { background-color: @colorAdpBlue; }  //marbles
 ol.marble-checklist >li:nth-child(even)::before { background-color: @colorAdpRed; }   //marbles
 ol.marble-checklist >li label b::after { background-color: @colorAdpSkyBlue; border-color: @colorAdpSkyBlue; }  //checkboxes
+
+// Summary Details Colors
+details >summary::before { color: inherit; }  //collapsed marker color
+details[open] >summary::before, details >summary:hover::before { color: black; }  //expanded marker color
+details >summary+header, details:not(:has(details))::details-content { background-color: lightblue; }  /* content box */
