@@ -40,6 +40,18 @@ const app = {
          },
       },
 
+   platform: {
+      openSection(elem, event) {
+         const id = event.target.href.split('#').pop();
+         const open = (elem) => {
+            if (elem?.tagName.toLowerCase() === 'details')
+               elem.setAttribute('open', true);
+            return elem ? open(elem.parentElement) : null;
+            };
+         open(globalThis.document.getElementById(id));
+         },
+      },
+
    start() {
       console.log('🇺🇸 American Democratic Party 🇺🇸');
       app.article.init();

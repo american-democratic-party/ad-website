@@ -9,7 +9,7 @@
       <h2>{{articleTitle}}</h2>
       <div>
          <header>Table of Contents</header>
-         <ul class=platform-toc>
+         <ul class=platform-toc data-on-click=app.platform.openSection>
             {% render 'src/templates/generated/platform-toc.html' %}
          </ul>
       </div>

@@ -34,7 +34,7 @@
    },
    "runScriptsConfig": {
       "clean": [
-         "rimraf build docs"
+         "rimraf src/templates/generated build docs"
       ],
       "generated": [
          "node tools/details-summary-generator.js src/templates/platform-text src/templates/generated platform",

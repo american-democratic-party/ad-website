@@ -59,6 +59,7 @@ const processFile = (filePath, index) => {
    };
 
 const processFiles = () => {
+   fs.mkdirSync(outputFolder, { recursive: true });
    fs.writeFileSync(detailsFile, files.map(processFile).join('\n'));
    const tocLine = (section) =>
       `<li data-depth=${section.depth}><a href=#${section.id}>${section.num}: ${section.title}</a></li>`;
