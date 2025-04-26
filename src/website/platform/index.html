@@ -1,4 +1,4 @@
-{% assign articleTitle = 'Party Platform' %}
+{% assign articleTitle = 'Platform' %}
 {% assign heroImage =    'platform.png' %}
 {% assign heroCaption =  'The American Democratic Platform' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
@@ -15,9 +15,19 @@
       </div>
    </section>
 
-   <section>
+   <section id=preamble>
       <figure data-picture-size=1>
          <img src={{webRoot}}/assets/buffalo-nickel.png alt=nickel data-license=public-domain>
+      </figure>
+      <h2>Preamble</h2>
+      <div>
+         {% render 'src/templates/platform-preamble.html' %}
+      </div>
+   </section>
+
+   <section>
+      <figure data-picture-size=1>
+         <img src={{webRoot}}/assets/logos/adp-circle-logo.svg alt=logo>
       </figure>
       <h2>{{heroCaption}}</h2>
       <div>

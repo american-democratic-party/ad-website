@@ -35,17 +35,19 @@ const intro = () => {
 const processFile = (filePath, index) => {
    const html =         fs.readFileSync(filePath, 'utf-8');
    const pathInfo =     path.parse(filePath);
-   const isParentNode = pathInfo.base === '+summary-header.html';
+   const isHeader =     (file) => file.endsWith('+summary-header.html');
+   const isParentNode = isHeader(filePath);
    const isLast =       index === files.length - 1;
    const sourceDepth =  sourceFolder.split('/').length;
-   const fileDepth =    filePath.split('/').length;
-   const calcPops =     (file) => Math.max(0, fileDepth - file.split('/').length);  //levels to unnest
-   const pops =         isLast ? fileDepth - sourceDepth - 1 : calcPops(files[index + 1]);
+   const depth =        (file) => file.split('/').length - sourceDepth - (isHeader(file) ? 1 : 0);
+   const fileDepth =    depth(filePath);
+   const calcPops =     (nextFile) => Math.max(0, fileDepth - depth(nextFile));  //levels to unnest
+   const pops =         isLast ? fileDepth : calcPops(files[index + 1]);
    const sectionCode =  isParentNode ? path.basename(pathInfo.dir) : pathInfo.name;  //ex: "5-tax-policy"
    const sectionBase =  (isParentNode ? pathInfo.dir : filePath).slice(sourceFolder.length + 1);  //ex: "3-domestic/5-tax-policy"
    const section = {
       id:    sectionCode.slice(sectionCode.indexOf('-') + 1),                         //ex: "tax-policy"
-      depth: fileDepth - sourceDepth - (isParentNode ? 1 : 0),                        //ex: 2
+      depth: fileDepth,                                                               //ex: 1
       title: html.split('summary>')[1].slice(0, -2),                                  //ex: "Tax Policy"
       num:   sectionBase.split('/').map(section => section.split('-')[0]).join('.'),  //ex: "3.5"
       };
