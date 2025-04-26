@@ -42,7 +42,7 @@ const processFile = (filePath, index) => {
    const depth =        (file) => file.split('/').length - sourceDepth - (isHeader(file) ? 1 : 0);
    const fileDepth =    depth(filePath);
    const calcPops =     (nextFile) => Math.max(0, fileDepth - depth(nextFile));  //levels to unnest
-   const pops =         isLast ? fileDepth : calcPops(files[index + 1]);
+   const pops =         isLast ? fileDepth - 1 : calcPops(files[index + 1]);
    const sectionCode =  isParentNode ? path.basename(pathInfo.dir) : pathInfo.name;  //ex: "5-tax-policy"
    const sectionBase =  (isParentNode ? pathInfo.dir : filePath).slice(sourceFolder.length + 1);  //ex: "3-domestic/5-tax-policy"
    const section = {
