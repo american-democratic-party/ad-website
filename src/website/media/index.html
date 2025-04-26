@@ -2,7 +2,7 @@
 {% assign heroImage =    webRoot | append: '/assets/backgrounds/american-flag-by-tim-mossholder-QsX23A3NgMQ-unsplash.jpg' %}
 {% assign heroCaption =  'Media' %}
 {% assign logosUrl =     'https://github.com/american-democratic-party/american-democratic-party/blob/main/src/website/assets/logos' %}
-{% assign instructions = 'Hit Shift+Cmd+3 to capture screena and then flatten retina from the Terminal with: sips -s dpiHeight 72 -s dpiWidth 72 ~/Desktop/*.png' %}
+{% assign instructions = '"Hit Shift+Cmd+3 to capture screena and then flatten retina from the Terminal with: sips -s dpiHeight 72 -s dpiWidth 72 ~/Desktop/*.png"' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
 <main>
@@ -13,7 +13,7 @@
 
    <section class=image-viewer>
       <h2>Bison Logo</h2>
-      <figure>
+      <figure title={{instructions}}>
          <img src={{webRoot}}/assets/logos/adp-bison-logo.svg alt=logo>
          <figcaption>
             <code>adp-bison-logo.svg</code> &nbsp; 650&times;450 &nbsp;
@@ -45,7 +45,7 @@
 
    <section class=logo-card-viewer>
       <h2>Logo Card</h2>
-      <figure title="{{instructions}}">
+      <figure title={{instructions}}>
          <img src={{webRoot}}/assets/logos/adp-bison-logo.svg alt=logo>
          <p>American Democratic Party</p>
       </figure>
@@ -57,16 +57,29 @@
 
    <section class=image-viewer>
       <h2>Circle Logo</h2>
-      <figure>
+      <figure title={{instructions}}>
          <img src={{webRoot}}/assets/logos/adp-circle-logo.svg alt=logo>
          <figcaption>
             <code>adp-circle-logo.svg</code> &nbsp; 500&times;500 &nbsp;
-            <a href={{logosUrl}}/adp-circle-logo.svg class=external-site title=XML><i data-icon=code></i></a>
+            <a href={{logosUrl}}/adp-circle-logo.svg class=external-site title=XML>
+               <i data-icon=code></i></a>
          </figcaption>
       </figure>
       <figure>
          <img src={{webRoot}}/assets/logos/adp-circle-logo.png alt=logo>
          <figcaption><code>adp-circle-logo.png</code> &nbsp; 500&times;500</figcaption>
+      </figure>
+      <figure title={{instructions}}>
+         <img src={{webRoot}}/assets/logos/adp-circle-logo-white.svg alt=logo>
+         <figcaption>
+            <code>adp-circle-logo.svg</code> &nbsp; 500&times;500 &nbsp;
+            <a href={{logosUrl}}/adp-circle-logo-white.svg class=external-site title=XML>
+               <i data-icon=code></i></a>
+         </figcaption>
+      </figure>
+      <figure>
+         <img src={{webRoot}}/assets/logos/adp-circle-logo-white.png alt=logo>
+         <figcaption><code>adp-circle-logo-white.png</code> &nbsp; 500&times;500</figcaption>
       </figure>
    </section>
 
