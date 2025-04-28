@@ -3,75 +3,8 @@
 
 @import "static/utility-box";
 
-
 main >section[data-background=american-flag] {
-   background-image: url(assets/backgrounds/american-flag-by-tim-mossholder-QsX23A3NgMQ-unsplash-blur.jpg);
-   }
-
-main >section.image-viewer {
-   img {
-      .CheckerboardBackground();
-      }
-   }
-
-main >section.logo-card-viewer {
-   color: white;
-   background-color: dimgray;
-   >figure:first-of-type {
-      display: flex;
-      align-items: center;
-      width: 600px;   //half of 1200px
-      height: 315px;  //half of 630px
-      max-width: 100%;  //prevent overflow on mobile
-      background-color: white;
-      outline: 1px solid white;  //extra space for a clean image crop
-      padding: 0px;
-      >img {
-         width: 50%;
-         transform: scale(0.9) translate(0px, 0px);  //adjust size and location
-         }
-      >p {
-         width: 50%;
-         font-family: Chango;
-         font-size: 1.9rem;
-         line-height: 1.8em;
-         text-align: left;
-         color: @colorAdpGray;
-         padding-left: 3px;
-         }
-      }
-   >figure:last-of-type {
-      img {
-         .CheckerboardBackground();
-         }
-      }
-   }
-
-main >section.party-colors {
-   >figure {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: end;
-      >cite {
-         font-size: 5em;
-         transform: scaleX(-1);
-         }
-      >header {
-         font-size: 1.3rem;
-         }
-      >b {
-         font-size: 2em;
-         color: white;
-         background-color: @colorAdpBlue;
-         padding: 40px 0px;
-         &+b {
-            background-color: @colorAdpRed;
-            }
-         &+b+b {
-            background-color: @colorAdpGray;
-            }
-         }
-      }
+   background-image: @imageAmericanFlagBanner;
    }
 
 ul.platform-toc {
