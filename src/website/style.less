@@ -11,3 +11,10 @@
 // Style pending next library release
 details >summary::before { transition: color 800ms, transform 400ms, text-shadow 800ms; }
 details details details >summary { font-weight: normal; }
+figure >figcaption >cite { display: block; font-size: small; font-weight: 100; }
+@media (prefers-color-scheme: dark) {  //dark-mode for zebra layout
+   main >section { color: white; background-color: var(--colorTar); }
+   main >section:nth-child(even) { background-color: var(--colorCharcoal); }
+   }
+main >section.night-mode { color: white; background-color: black; }
+main:has(>section.night-mode:last-child)+footer { background-color: var(--colorTar); }
