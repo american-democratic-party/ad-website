@@ -37,6 +37,7 @@
          "rimraf src/templates/generated build docs"
       ],
       "generated": [
+         "//copy-file node_modules/web-ignition/dist/utility-box.less --folder src/website/css/static",
          "node tools/details-summary-generator.js src/templates/platform-text src/templates/generated platform",
          "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
       ],

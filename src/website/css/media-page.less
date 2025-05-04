@@ -1,11 +1,13 @@
 // American Democratic Party
 // Style: Media Page (logos)
 
-@import "static/utility-box";
+@import "static/constants";
 
 main >section.image-viewer {
-   img {
+   figure {
       .CheckerboardBackground();
+      &[data-target-width="500"] { img { width: (500px/2); } }
+      &[data-target-width="650"] { img { width: (650px/2); } }
       }
    }
 
@@ -36,9 +38,7 @@ main >section.logo-card-viewer {
          }
       }
    >figure:last-of-type {
-      img {
-         .CheckerboardBackground();
-         }
+      .CheckerboardBackground();
       }
    }
 
@@ -58,9 +58,7 @@ main >section.banner-viewer {
          }
       }
    >figure:last-of-type {
-      img {
-         .CheckerboardBackground();
-         }
+      .CheckerboardBackground();
       }
    }
 
