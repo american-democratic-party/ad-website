@@ -3,6 +3,49 @@
 
 @import "static/constants";
 
+
+table.breakdown-of-parties {
+   table-layout: fixed;
+   width: 100%;
+   padding: 0px;
+   thead {
+      tr {
+         border-bottom: 1px solid silver;
+         th {
+            font-size: 1.2rem;
+            font-weight: 100;
+            vertical-align: top;
+            figure {
+               font-size: 5em;
+               transform: scaleX(-1);
+               }
+            }
+         }
+      }
+   tbody {
+      tr {
+         border-bottom: 1px solid silver;
+         td {
+            font-size: 1.2rem; .MobileMode({ font-size: 1.1rem} );
+            vertical-align: middle;
+            padding: 30px 20px;
+            opacity: 0.8;
+            transition: all 500ms;
+            cursor:default;
+            &:nth-child(1) { background-color: @colorAdpBlue }
+            &:nth-child(2) { background-color: @colorAdpRed }
+            &:nth-child(3) { background-color: @colorAdpGray }
+            span {
+               white-space: nowrap;
+               }
+            }
+         &:hover td {
+            opacity: 1;
+            }
+         }
+      }
+   }
+
 main >section[data-background=american-flag] {
    background-image: @imageAmericanFlagBanner;
    }
