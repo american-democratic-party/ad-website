@@ -8,6 +8,7 @@ table.breakdown-of-parties {
    table-layout: fixed;
    width: 100%;
    padding: 0px;
+   overflow: hidden;
    thead {
       tr {
          border-bottom: 1px solid silver;
@@ -28,9 +29,9 @@ table.breakdown-of-parties {
       tr {
          border-bottom: 1px solid silver;
          td {
-            font-size: 1.2rem; .MobileMode({ font-size: 1.1rem} );
             vertical-align: middle;
-            padding: 30px 20px;
+            font-size: 1.2rem;   .MobileMode({ font-size: 0.9rem; } );
+            padding: 30px 20px;  .MobileMode({ padding: 20px 10px; }  );
             opacity: 0.8;
             transition: all 500ms;
             cursor:default;
