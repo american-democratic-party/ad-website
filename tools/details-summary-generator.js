@@ -15,14 +15,15 @@ import slash from 'slash';
 // Usage:
 //    node details-summary-generator.js [source] [destination] [name]
 
-const cleanPath =    (folder) => path.normalize(slash(folder)).trim().replace(/\/$/, '');
-const sourceFolder = cleanPath(process.argv[2]);
-const outputFolder = cleanPath(process.argv[3]);
-const outputName =   process.argv[4].trim().toLowerCase();
-const files =        globSync(sourceFolder + '/**/*.html').map(slash).sort();
-const tocFile =      `${outputFolder}/${outputName}-toc.html`;
-const detailsFile =  `${outputFolder}/${outputName}-details.html`;
-const toc =          [];
+const titleFilename = '+summary-header.html';
+const cleanPath =     (folder) => path.normalize(slash(folder)).trim().replace(/\/$/, '');
+const sourceFolder =  cleanPath(process.argv[2]);
+const outputFolder =  cleanPath(process.argv[3]);
+const outputName =    process.argv[4].trim().toLowerCase();
+const files =         globSync(sourceFolder + '/**/*.html').map(slash).sort();
+const tocFile =       `${outputFolder}/${outputName}-toc.html`;
+const detailsFile =   `${outputFolder}/${outputName}-details.html`;
+const toc =           [];
 
 const intro = () => {
    console.log('[Details Summary Generator Tool]');
@@ -35,7 +36,7 @@ const intro = () => {
 const processFile = (filePath, index) => {
    const html =         fs.readFileSync(filePath, 'utf-8');
    const pathInfo =     path.parse(filePath);
-   const isHeader =     (file) => file.endsWith('+summary-header.html');
+   const isHeader =     (file) => file.endsWith(titleFilename);
    const isParentNode = isHeader(filePath);
    const isLast =       index === files.length - 1;
    const sourceDepth =  sourceFolder.split('/').length;
@@ -54,7 +55,7 @@ const processFile = (filePath, index) => {
    toc.push(section);
    const details = html
       .replace('<details>', `<details id=${section.id}>`)
-      .replace('<summary>', `<summary>${section.num}: `)
+      .replace('<summary>', `<summary><b>${section.num}:</b> `)
       .replace('</details>', isParentNode ? '' : '</details>') +
       '</details>\n'.repeat(pops);
    return details;
