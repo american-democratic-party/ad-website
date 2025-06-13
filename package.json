@@ -6,11 +6,11 @@
    "type": "module",
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/american-democratic-party/american-democratic-party.git"
+      "url": "git+https://github.com/american-democratic-party/adp-website.git"
    },
    "homepage": "https://american-democratic-party.org",
-   "bugs": "https://github.com/american-democratic-party/american-democratic-party/issues",
-   "docs": "https://github.com/american-democratic-party/american-democratic-party#readme",
+   "bugs": "https://github.com/american-democratic-party/adp-website/issues",
+   "docs": "https://github.com/american-democratic-party/adp-website#readme",
    "author": "American Democratic Party (https://american-democratic-party.org)",
    "keywords": [
       "american",

@@ -3,9 +3,9 @@
 # American Democratic Party
 ### 🇺🇸 Liberal Principles from Common Sense 🇺🇸
 
-[![License:MIT](https://img.shields.io/badge/License-CC0-blue.svg)](https://github.com/american-democratic-party/american-democratic-party/blob/main/LICENSE.txt)
-[![Build](https://github.com/american-democratic-party/american-democratic-party/actions/workflows/run-spec-on-push.yaml/badge.svg)](https://github.com/american-democratic-party/american-democratic-party/actions/workflows/run-spec-on-push.yaml)
-[![Publish Website](https://github.com/american-democratic-party/american-democratic-party/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/american-democratic-party/american-democratic-party/actions/workflows/publish-website.yaml)
+[![License:MIT](https://img.shields.io/badge/License-CC0-blue.svg)](https://github.com/american-democratic-party/adp-website/blob/main/LICENSE.txt)
+[![Build](https://github.com/american-democratic-party/adp-website/actions/workflows/run-spec-on-push.yaml/badge.svg)](https://github.com/american-democratic-party/adp-website/actions/workflows/run-spec-on-push.yaml)
+[![Publish Website](https://github.com/american-democratic-party/adp-website/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/american-democratic-party/adp-website/actions/workflows/publish-website.yaml)
 
 This project manages the website:<br>
 https://american-democratic-party.org
