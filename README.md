@@ -17,7 +17,7 @@ Gaslighting and wokeism are not welcome here.
 
 ## Contributor Notes
 ```shell
-$ cd american-democratic-party
+$ cd adp-website
 $ npm install
 $ npm run interactive
 ```
