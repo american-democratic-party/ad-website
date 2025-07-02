@@ -55,7 +55,7 @@ const processFile = (filePath, index) => {
    toc.push(section);
    const details = html
       .replace('<details>', `<details id=${section.id}>`)
-      .replace('<summary>', `<summary><b>${section.num}:</b> `)
+      .replace('<summary>', `<summary><b>${section.num}</b> `)
       .replace('</details>', isParentNode ? '' : '</details>') +
       '</details>\n'.repeat(pops);
    return details;
@@ -64,9 +64,10 @@ const processFile = (filePath, index) => {
 const processFiles = () => {
    fs.mkdirSync(outputFolder, { recursive: true });
    fs.writeFileSync(detailsFile, files.map(processFile).join('\n'));
-   const tocLine = (section) =>
-      `<li data-depth=${section.depth}><a href=#${section.id}>${section.num}: ${section.title}</a></li>`;
-   fs.writeFileSync(tocFile, toc.map(tocLine).join('\n') + '\n');
+   const tocTitle = (section) => `<a href=#${section.id}>${section.title}</a>`;
+   const tocItem = (section) =>
+      `<li data-depth=${section.depth}><span>${section.num}</span>${tocTitle(section)}</li>`;
+   fs.writeFileSync(tocFile, toc.map(tocItem).join('\n') + '\n');
    };
 
 intro();

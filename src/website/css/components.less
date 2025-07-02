@@ -53,16 +53,36 @@ main >section[data-background=american-flag] {
    background-image: @imageAmericanFlagBanner;
    }
 
-ul.platform-toc {
-   list-style-type: none;
-   li {
+menu.platform-toc {
+   //ex: <li data-depth=2><span>2.3</span><a href="#freedom-of-speech">Freedom of Speech</a></li>
+   .ParensListMarker() {
+      font-weight: bold;
+      margin-top: 10px;
+      span::after {
+         content: ")";
+         }
+      }
+   >li {
       font-size: 0.9rem;
       font-weight: normal;
+      text-align: left;
       margin-bottom: 3px;
-      &[data-depth="1"] { font-size: 1.1rem; font-weight: bold; margin-top: 10px; }
-      &[data-depth="2"] { font-size: 1.0rem; margin-left: 40px; }
+      &[data-depth="1"] { margin-left: 0px; font-size: 1.1rem; .ParensListMarker(); }
+      &[data-depth="2"] { margin-left: 40px; font-size: 1.0rem; }
       &[data-depth="3"] { margin-left: 60px; }
       &[data-depth="4"] { margin-left: 80px; }
       &[data-depth="5"] { margin-left: 100px; }
+      span {
+         padding-right: 0.5em;
+         }
       }
+   }
+
+section >div >details >summary {  //top level only (depth of 1)
+   >b::after {
+      content: ")"
+      }
+   }
+details >summary >b {
+   padding-right: 0.2em;
    }

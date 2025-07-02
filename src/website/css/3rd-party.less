@@ -3,7 +3,7 @@
 
 @import "static/constants";
 
-// Zebra Sections layout -- customize header
+// Zebra Sections Layout -- customize header
 body >header {
    // background-image: url(assets/banners/brian-miller-b4N0GAEn-RQ-unsplash.jpg);
    // background-image: url(assets/banners/richard-lee-9ME5tBjVyMQ-unsplash.jpg);
@@ -28,11 +28,11 @@ ol.marble-checklist >li label b::after { background-color: @colorAdpSkyBlue; bor
 // Details Summary Colors
 details >summary+header,
 details:not(:has(details))::details-content {
-   background-color: lightblue;  /* content box (light) */
+   background-color: lightblue;  //content box (light)
    }
 @media (prefers-color-scheme: dark) {
    details >summary+header,
    details:not(:has(details))::details-content {
-      background-color: steelblue;  /* content box (dark) */
+      background-color: steelblue;  //content box (dark)
       }
    }
