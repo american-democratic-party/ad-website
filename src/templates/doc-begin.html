@@ -1,4 +1,4 @@
-{% assign defaultImageUrl = webRoot | append: '/assets/adp-logo-card.png' %}
+{% assign defaultImageUrl = webRoot | append: '/assets/ad-logo-card.png' %}
 {% assign imageUrl =        heroImage | default: defaultImageUrl %}
 {% assign imageCaption =    heroCaption | default: 'Logo' %}
 {% assign motto =           'Liberal Principles from Common Sense' %}
@@ -25,7 +25,7 @@
    <meta property=og:image:alt           content="{{imageCaption}}">
    <title>{{articleTitle}} 🇺🇸 American Democratic Party</title>
    <link rel=icon             href={{webRoot}}/assets/bookmark-icon.png>
-   <link rel=apple-touch-icon href={{webRoot}}/assets/adp-bison-logo-sq.png>
+   <link rel=apple-touch-icon href={{webRoot}}/assets/ad-bison-logo-sq.png>
    <link rel=preconnect       href=https://fonts.googleapis.com>
    <link rel=preconnect       href=https://fonts.gstatic.com crossorigin>
    <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{package.dependencies.-fortawesome-fontawesome-free|version}}/css/all.min.css>
@@ -47,7 +47,7 @@
    </nav>
    <h1>American Democratic Party</h1>
    <h2>🇺🇸&nbsp;{{motto}}&nbsp;🇺🇸</h2>
-   <img src={{webRoot}}/assets/logos/adp-bison-logo.svg alt=logo>
+   <img src={{webRoot}}/assets/logos/ad-bison-logo.svg alt=logo>
    <div id=article-nav>
       <i data-icon=circle-left></i>
       <i data-icon=circle-right></i>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- - - - - - - - - - - - - - - - - - -->
 <!-- American Democratic Party         -->
-<!-- ADP Bison Logo, CC0 1.0 Universal -->
+<!-- AD Bison Logo, CC0 1.0 Universal  -->
 <!-- - - - - - - - - - - - - - - - - - -->
 <svg xmlns="http://www.w3.org/2000/svg" width="650px" height="450px" viewBox="0 0 650 450">
 
    <defs>
-      <polygon id="adp-star" points="50 0 81 95 0 37 100 37 19 95"
+      <polygon id="ad-star" points="50 0 81 95 0 37 100 37 19 95"
          fill="white" transform="scale(0.8)"/>
    </defs>
 
-   <path id="adp-blue"
+   <path id="ad-blue"
       d="M 18 207 C 18 207 20 163 22 149 C 24 134 28 145 36 121 C 40 109 49 101 59 94
          C 75 81 103 71 132 68 C 157 64 218 50 258 41 C 298 32 327 21 360 17 C 390 14 434 14 456 23
          C 474 30 502 41 515 57 C 525 70 536 92 529 89 C 522 85 545 77 557 77
@@ -22,17 +22,17 @@
       paint-order="stroke"
       />
 
-   <use href="#adp-star" transform="translate(140,95)"/>
-   <use href="#adp-star" transform="translate(260,95)"/>
-   <use href="#adp-star" transform="translate(380,95)"/>
+   <use href="#ad-star" transform="translate(140,95)"/>
+   <use href="#ad-star" transform="translate(260,95)"/>
+   <use href="#ad-star" transform="translate(380,95)"/>
 
-   <path id="adp-horn"
+   <path id="ad-horn"
       d="M 560 84 C 560 83 559 86 554 100 C 543 126 561 125 553 138 C 547 150 527 146 524 134
          C 516 103 559 84 560 84 Z"
       fill="white"
       />
 
-   <path id="adp-red"
+   <path id="ad-red"
       d="M 18 215 C 18 215 635 215 635 215 C 635 215 635 240 627 255 C 622 267 616 258 601 273
          C 598 275 591 304 565 305 C 549 305 557 289 548 288 C 541 288 496 285 483 293
          C 479 295 413 336 409 348 C 405 359 400 402 407 409 C 413 415 417 408 424 426
