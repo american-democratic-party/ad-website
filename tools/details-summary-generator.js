@@ -1,5 +1,6 @@
 // Details Summary Generator Tool
 
+import { EOL } from 'node:os';
 import { globSync } from 'glob';
 import fs    from 'fs';
 import path  from 'path';
@@ -16,7 +17,7 @@ import slash from 'slash';
 //    node details-summary-generator.js [source] [destination] [name]
 
 const titleFilename = '+summary-header.html';
-const cleanPath =     (folder) => path.normalize(slash(folder)).trim().replace(/\/$/, '');
+const cleanPath =     (folder) => slash(path.normalize(folder)).trim().replace(/\/$/, '');
 const sourceFolder =  cleanPath(process.argv[2]);
 const outputFolder =  cleanPath(process.argv[3]);
 const outputName =    process.argv[4].trim().toLowerCase();
@@ -26,11 +27,11 @@ const detailsFile =   `${outputFolder}/${outputName}-details.html`;
 const toc =           [];
 
 const intro = () => {
-   console.log('[Details Summary Generator Tool]');
-   console.log('source:   ', sourceFolder);
-   console.log('toc:      ', tocFile);
-   console.log('details:  ', detailsFile);
-   console.log('templates:', files.length);
+   console.info('[Details Summary Generator Tool]');
+   console.info('source:   ', sourceFolder);
+   console.info('toc:      ', tocFile);
+   console.info('details:  ', detailsFile);
+   console.info('templates:', files.length);
    };
 
 const processFile = (filePath, index) => {
@@ -56,20 +57,26 @@ const processFile = (filePath, index) => {
    const details = html
       .replace('<details>', `<details id=${section.id}>`)
       .replace('<summary>', `<summary><b>${section.num}</b> `)
-      .replace('</details>', isParentNode ? '' : '</details>') +
-      '</details>\n'.repeat(pops);
+      .replace('</details>', isParentNode ? '' : '</details>').trim() +
+      `${EOL}</details>`.repeat(pops) + EOL;
    return details;
    };
 
 const processFiles = () => {
    fs.mkdirSync(outputFolder, { recursive: true });
-   fs.writeFileSync(detailsFile, files.map(processFile).join('\n'));
+   const header = `<!-- ${detailsFile} -->`;
+   fs.writeFileSync(detailsFile, header + EOL + files.map(processFile).join(''));
+   };
+
+const saveToc = () => {
    const tocTitle = (section) => `<a href=#${section.id}>${section.title}</a>`;
    const tocItem = (section) =>
       `<li data-depth=${section.depth}><span>${section.num}</span>${tocTitle(section)}</li>`;
-   fs.writeFileSync(tocFile, toc.map(tocItem).join('\n') + '\n');
+   const toText = (filename, lines) => `<!-- ${tocFile} -->${EOL}` + lines.join(EOL) + EOL;
+   fs.writeFileSync(tocFile, toText(tocFile, toc.map(tocItem)));
    };
 
 intro();
 processFiles();
-console.log('Done.\n');
+saveToc();
+console.info('Done.\n');

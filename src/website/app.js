@@ -53,7 +53,7 @@ const app = {
       },
 
    start() {
-      console.log('🇺🇸 American Democratic Party 🇺🇸');
+      console.info('🇺🇸 American Democratic Party 🇺🇸');
       app.article.init();
       },
 
