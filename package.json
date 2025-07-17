@@ -75,7 +75,7 @@
       "dna-engine": "~3.2",
       "glob": "~11.0",
       "jshint": "~2.13",
-      "less": "~4.3",
+      "less": "~4.4",
       "recursive-exec": "~1.0",
       "replacer-util": "~1.4",
       "rev-web-assets": "~1.4",
