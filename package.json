@@ -64,7 +64,8 @@
       "toc": "run-scripts generated --verbose --only=1",
       "pretest": "run-scripts clean lint generated build publish",
       "test": "html-validator docs '--ignore=Section lacks heading.'",
-      "interactive": "npm run pretest && run-scripts interactive --parallel"
+      "interactive": "npm run pretest && run-scripts interactive --parallel",
+      "i": "npm run interactive"
    },
    "dependencies": {
       "@fortawesome/fontawesome-free": "~7.0",
