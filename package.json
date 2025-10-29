@@ -41,9 +41,6 @@
          "node tools/details-summary-generator.js src/templates/platform-text src/templates/generated platform",
          "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
       ],
-      "lint": [
-         "jshint tools src"
-      ],
       "build": [
          "copy-folder src/website                   build --ext=.png,.jpg,.svg,.js",
          "lessc       src/website/style.less        build/style.css",
@@ -61,11 +58,12 @@
       ]
    },
    "scripts": {
-      "toc": "run-scripts generated --verbose --only=1",
-      "create-website": "run-scripts clean lint generated build publish",
-      "pretest": "npm run create-website",
-      "test": "html-validator docs '--ignore=Section lacks heading.'",
-      "interactive": "npm run create-website && run-scripts interactive --parallel",
+      "just-toc": "run-scripts generated --verbose --only=1",
+      "pretest": "run-scripts clean generated build publish",
+      "test": "jshint tools src",
+      "validate-html": "html-validator --default-rules docs",
+      "v": "npm run validate-html",
+      "interactive": "npm test && run-scripts interactive --parallel",
       "i": "npm run interactive"
    },
    "dependencies": {
@@ -84,7 +82,7 @@
       "rimraf": "~6.0",
       "run-scripts-util": "~1.3",
       "slash": "~5.1",
-      "w3c-html-validator": "~1.9",
+      "w3c-html-validator": "~2.0",
       "web-ignition": "~2.4"
    }
 }
