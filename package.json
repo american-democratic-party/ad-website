@@ -32,6 +32,11 @@
          "dna": false
       }
    },
+   "replacerConfig": {
+      "macros": {
+         "article-link-html": "<li><a href={[webRoot]}/article/{{file.folder}}>{{articleTitle}}</a></li>"
+      }
+   },
    "runScriptsConfig": {
       "clean": [
          "rimraf src/templates/generated build docs"
@@ -39,7 +44,7 @@
       "generated": [
          "copy-file node_modules/web-ignition/dist/utility-box.less --folder src/website/css/static --platform-eol",
          "node tools/details-summary-generator.js src/templates/platform-text src/templates/generated platform",
-         "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
+         "replacer src/website/article --ext=.html --content={{macro:article-link-html}} src/templates/generated --find=[webRoot] --replacement={webRoot} --title-sort --concat=articles.html"
       ],
       "build": [
          "copy-folder src/website                   build --ext=.png,.jpg,.svg,.js",
@@ -79,7 +84,7 @@
       "recursive-exec": "~1.0",
       "replacer-util": "~1.4",
       "rev-web-assets": "~1.5",
-      "rimraf": "~6.0",
+      "rimraf": "~6.1",
       "run-scripts-util": "~1.3",
       "slash": "~5.1",
       "w3c-html-validator": "~2.0",
