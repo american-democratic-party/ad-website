@@ -54,10 +54,9 @@
       ],
       "publish": [
          "rev-web-assets build                           docs --meta-content-base=https://american-democratic-party.org",
-         "copy-file src/cname.txt                        docs/CNAME",
-         "copy-file src/website/assets/bookmark-icon.png docs/graphics --folder",
-         "replacer --virtual-input . docs --rename=robots.txt --content=#{{space}}Allow{{space}}bots",
-         "replacer --virtual-input . docs --rename=CNAME      --content=american-democratic-party.org"
+         "replacer --virtual-input . --rename=robots.txt docs --content=#{{space}}Allow{{space}}bots",
+         "replacer --virtual-input . --rename=CNAME      docs --content=american-democratic-party.org",
+         "copy-file src/website/assets/bookmark-icon.png docs/graphics --folder"
       ],
       "interactive": [
          "chokidar src --command 'run-scripts lint build publish'",
