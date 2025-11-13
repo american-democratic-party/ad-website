@@ -49,13 +49,15 @@
       "build": [
          "copy-folder src/website                   build --ext=.png,.jpg,.svg,.js",
          "lessc       src/website/style.less        build/style.css",
-         "replacer    src/website   --ext=.html     build",
+         "replacer    src/website --ext=.html       build",
          "copy-file   build/article-list/index.html build/article --folder"
       ],
       "publish": [
          "rev-web-assets build                           docs --meta-content-base=https://american-democratic-party.org",
          "copy-file src/cname.txt                        docs/CNAME",
-         "copy-file src/website/assets/bookmark-icon.png docs/graphics --folder"
+         "copy-file src/website/assets/bookmark-icon.png docs/graphics --folder",
+         "replacer --virtual-input . docs --rename=robots.txt --content=#{{space}}Allow{{space}}bots",
+         "replacer --virtual-input . docs --rename=CNAME      --content=american-democratic-party.org"
       ],
       "interactive": [
          "chokidar src --command 'run-scripts lint build publish'",
@@ -76,13 +78,13 @@
       "browser-sync": "~3.0",
       "chokidar-cli": "~3.0",
       "copy-file-util": "~1.3",
-      "copy-folder-util": "~1.1",
+      "copy-folder-util": "~1.2",
       "dna-engine": "~3.3",
       "glob": "~11.0",
       "jshint": "~2.13",
       "less": "~4.4",
-      "recursive-exec": "~1.0",
-      "replacer-util": "~1.4",
+      "recursive-exec": "~1.1",
+      "replacer-util": "~1.5",
       "rev-web-assets": "~1.5",
       "rimraf": "~6.1",
       "run-scripts-util": "~1.3",
