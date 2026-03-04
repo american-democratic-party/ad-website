@@ -5,9 +5,12 @@
 
 main[data-page=media] {
 
+   img {
+      .CheckerboardBox();
+      }
+
    >section.image-viewer {
       figure {
-         .CheckerboardBackground();
          &[data-target-width="500"] { img { width: (500px/2); } }
          &[data-target-width="650"] { img { width: (650px/2); } }
          }
@@ -28,6 +31,8 @@ main[data-page=media] {
          >img {
             width: 50%;
             transform: scale(0.9) translate(0px, 0px);  //adjust size and location
+            background: white;
+            outline: none;
             }
          >p {
             width: 50%;
@@ -39,9 +44,6 @@ main[data-page=media] {
             padding-left: 3px;
             }
          }
-      >figure:last-of-type {
-         .CheckerboardBackground();
-         }
       }
 
    >section.banner-viewer {
@@ -51,16 +53,13 @@ main[data-page=media] {
          height: 101px;  //half of  200px (+1px for a clean image crop)
          background-image: @imageAmericanFlagBanner;
          background-size: cover;
-         outline: 2px solid red;
+         outline: 3px solid firebrick;
          >p {
             font-size: 1.3rem;
             font-family: Chango;
             color: white;
             text-shadow: 0px 0px 0.5em black;
             }
-         }
-      >figure:last-of-type {
-         .CheckerboardBackground();
          }
       }
 
