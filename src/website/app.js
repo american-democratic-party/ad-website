@@ -52,8 +52,16 @@ const app = {
          },
       },
 
+   addSectionLinks() {
+      // On hover make the first header in a section a link to the section.
+      const headings = globalThis.document.querySelectorAll('section[id] >h2:first-of-type');
+      headings.forEach(elem => elem.dataset.href = '#' + elem.parentElement.id);
+      headings.forEach(elem => elem.title = window.location.href.split('#')[0] + elem.dataset.href);
+      },
+
    start() {
       console.info('🇺🇸 American Democratic Party 🇺🇸');
+      app.addSectionLinks();
       app.article.init();
       },
 
