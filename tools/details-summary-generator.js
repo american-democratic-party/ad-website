@@ -1,9 +1,9 @@
 // Details Summary Generator Tool
 
-import { EOL } from 'node:os';
 import { globSync } from 'glob';
-import fs    from 'fs';
-import path  from 'path';
+import fs    from 'node:fs';
+import os    from 'node:os';
+import path  from 'node:path';
 import slash from 'slash';
 
 // <details>
@@ -58,21 +58,21 @@ const processFile = (filePath, index) => {
       .replace('<details>', `<details id=${section.id}>`)
       .replace('<summary>', `<summary><b>${section.num}</b> `)
       .replace('</details>', isParentNode ? '' : '</details>').trim() +
-      `${EOL}</details>`.repeat(pops) + EOL;
+      `${os.EOL}</details>`.repeat(pops) + os.EOL;
    return details;
    };
 
 const processFiles = () => {
    fs.mkdirSync(outputFolder, { recursive: true });
    const header = `<!-- ${detailsFile} -->`;
-   fs.writeFileSync(detailsFile, header + EOL + files.map(processFile).join(''));
+   fs.writeFileSync(detailsFile, header + os.EOL + files.map(processFile).join(''));
    };
 
 const saveToc = () => {
    const tocTitle = (section) => `<a href=#${section.id}>${section.title}</a>`;
    const tocItem = (section) =>
       `<li data-depth=${section.depth}><span>${section.num}</span>${tocTitle(section)}</li>`;
-   const toText = (filename, lines) => `<!-- ${tocFile} -->${EOL}` + lines.join(EOL) + EOL;
+   const toText = (filename, lines) => `<!-- ${tocFile} -->${os.EOL}` + lines.join(os.EOL) + os.EOL;
    fs.writeFileSync(tocFile, toText(tocFile, toc.map(tocItem)));
    };
 
